@@ -1,0 +1,5 @@
+--- a/vendor/laravel/framework/src/Illuminate/Database/Query/Builder.php
++++ b/vendor/laravel/framework/src/Illuminate/Database/Query/Builder.php
+@@ -876 +876 @@
+-        $this->wheres[] = compact('type', 'operator', 'query', 'boolean');
++        $this->wheres[] = compact('type', 'query', 'boolean');

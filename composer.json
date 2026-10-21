@@ -47,6 +47,7 @@
         ]
     },
     "scripts": {
+        "patch-legacy-laravel": "php tools/security/apply-laravel53-php74.php",
         "post-root-package-install": [
             "php -r \"copy('.env.example', '.env');\""
         ],
@@ -54,10 +55,12 @@
             "php artisan key:generate"
         ],
         "post-install-cmd": [
+            "@patch-legacy-laravel",
             "Illuminate\\Foundation\\ComposerScripts::postInstall",
             "php artisan optimize"
         ],
         "post-update-cmd": [
+            "@patch-legacy-laravel",
             "Illuminate\\Foundation\\ComposerScripts::postUpdate",
             "php artisan optimize"
         ]
