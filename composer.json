@@ -47,7 +47,10 @@
         ]
     },
     "scripts": {
-        "patch-legacy-laravel": "php tools/security/apply-laravel53-php74.php",
+        "patch-legacy-laravel": [
+            "php tools/security/apply-laravel53-php74.php",
+            "php tools/security/apply-api-handler-php74.php"
+        ],
         "post-root-package-install": [
             "php -r \"copy('.env.example', '.env');\""
         ],
